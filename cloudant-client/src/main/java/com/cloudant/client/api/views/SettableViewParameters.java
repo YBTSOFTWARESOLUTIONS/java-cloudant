@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, 2018 IBM Corp. All rights reserved.
+ * Copyright © 2015, 2019 IBM Corp. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
  * except in compliance with the License. You may obtain a copy of the License at
@@ -231,6 +231,16 @@ public interface SettableViewParameters {
          */
 
         RB update(String update);
+
+        /**
+         * A partition key can be specified when querying data so that results can be constrained
+         * to a specific database partition.
+         *
+         * @param partition database partition key
+         * @return the builder to compose additional parameters or build the request
+         * @since 2.15.0
+         */
+        RB partition(String partition);
     }
 
     /**
